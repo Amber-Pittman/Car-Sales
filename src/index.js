@@ -20,8 +20,8 @@ const store = createStore(rootReducer);
 const rootElement = document.getElementById('root');
 ReactDOM.render(
     // gives all children components access to the store
-    <Provider Store={store}>
-        <App/>
+    <Provider store={store}>
+        <App />
     </Provider>, 
     rootElement
 );
