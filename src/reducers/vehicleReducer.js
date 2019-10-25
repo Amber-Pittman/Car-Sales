@@ -2,7 +2,7 @@
 import { ADD_FEATURES, REMOVE_FEATURES } from "../actions/vehicleAction";
 
 
-export const initialState = {
+const initialState = {
     additionalPrice: 0,
     car: {
       price: 26395,
@@ -38,11 +38,12 @@ export const initialState = {
           return {
             ...state,
             car: {
+              ...state.car,
               price: state.car.price - action.payload.price,
               features: state.car.features.filter(item => 
                 item.id !== action.payload.id)
               },
-            additionalFeatures: [...state.car.features, action.payload]
+            additionalFeatures: [...state.additionalFeatures, action.payload]
           };
 
         default: 
