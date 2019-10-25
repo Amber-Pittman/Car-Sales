@@ -17,11 +17,13 @@ const rootReducer = combineReducers({
 // create our store or "global state object"
 const store = createStore(rootReducer);
 
-const rootElement = document.getElementById('root');
+const rootElement = document.getElementById("root");
+
+
 ReactDOM.render(
-    // gives all children components access to the store
-    <Provider store={store}>
-        <App />
-    </Provider>, 
-    rootElement
+  // Wrapping Provider around App gives all children components access to the store
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  rootElement
 );
