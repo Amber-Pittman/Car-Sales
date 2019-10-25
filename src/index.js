@@ -10,6 +10,7 @@ import './styles.scss';
 
 // this combines everything into one giant main reducer,
 // so our action types still need to be unique
+// with only 1 reducer we wouldn't necessarily have to use combineReducers
 const rootReducer = combineReducers({
     vehicle: vehicleReducer
   });

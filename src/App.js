@@ -18,7 +18,7 @@ const App = (props) => {
       <div className="box">
         <AdditionalFeatures 
           additionalFeatures={props.additionalFeatures}
-          addItem={props.addItem} />
+          addFeatures={props.addFeatures} />
         <Total car={props.car} additionalPrice={props.additionalPrice} />
       </div>
     </div>
@@ -37,7 +37,8 @@ function mapStateToProps(state) {
 
 // when key:value are the same, can just call the key
 const mapDispatchToProps = {
-  addFeatures, removeFeatures
+  addFeatures, 
+  removeFeatures
 };
 
 export default connect(
