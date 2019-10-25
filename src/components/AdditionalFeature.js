@@ -8,7 +8,7 @@ const AdditionalFeature = props => {
         onClick={() => props.addFeatures(props.feature)}> 
         Add 
       </button>
-        {props.feature.name} (+ {props.feature.price})
+        {props.feature.name} (+{props.feature.price})
     </li>
   );
 };
