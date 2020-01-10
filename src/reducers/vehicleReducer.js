@@ -1,5 +1,5 @@
 
-import { ADD_FEATURES, REMOVE_FEATURES } from "../actions/vehicleAction";
+import { ADD_FEATURE, REMOVE_FEATURE } from "../actions/vehicleAction";
 
 
 const initialState = {
@@ -19,9 +19,9 @@ const initialState = {
     ]
   };
 
-  export function reducer(state = initialState, action) {
+  export const reducer = (state = initialState, action) => {
       switch(action.type) {
-        case ADD_FEATURES: 
+        case ADD_FEATURE: 
           return {
             ...state, 
             car: {
@@ -34,7 +34,7 @@ const initialState = {
               )
           };
 
-        case REMOVE_FEATURES: 
+        case REMOVE_FEATURE: 
           return {
             ...state,
             car: {

@@ -19,8 +19,6 @@ const rootReducer = combineReducers({
 const store = createStore(rootReducer);
 
 const rootElement = document.getElementById("root");
-
-
 ReactDOM.render(
   // Wrapping Provider around App gives all children components access to the store
   <Provider store={store}>
