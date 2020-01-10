@@ -1,7 +1,7 @@
 // we use constant variables instead of strings,
 // which prevents hidden errors resulting from typos
-export const ADD_FEATURE = "ADD_FEATURE";
-export const REMOVE_FEATURE = "REMOVE_FEATURE";
+export const ADD_FEATURE = 'ADD_FEATURE';
+export const REMOVE_FEATURE = 'REMOVE_FEATURE';
 
 // these are just pure functions that return predefined actions
 export const addFeature = (item) => {
