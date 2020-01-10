@@ -28,6 +28,12 @@ const App = ({additionalFeatures, car, additionalPrice, addFeature, removeFeatur
 };
 
 
+// when key:value are the same, can just call the key
+const mapDispatchToProps = {
+  addFeature,
+  removeFeature
+};
+
 
 const mapStateToProps = (state) => {
   return {
@@ -37,11 +43,6 @@ const mapStateToProps = (state) => {
   };
 }
 
-// when key:value are the same, can just call the key
-const mapDispatchToProps = {
-  addFeature,
-  removeFeature
-};
 
 export default connect(
   mapStateToProps,
