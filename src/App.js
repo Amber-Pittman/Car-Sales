@@ -1,45 +1,48 @@
 import React from 'react';
 import { connect } from "react-redux";
 import Header from './components/Header';
+import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
-import AddedFeatures from "./components/AddedFeatures";
 import Total from './components/Total';
 
-import { addFeatures, removeFeatures } from "./actions/vehicleAction";
+import { addFeature, removeFeature } from "./actions/vehicleAction";
 
-const App = (props) => {
+const App = ({additionalFeatures, car, additionalPrice, addFeature, removeFeature}) => {
   
   return (
     <div className="boxes">
       <div className="box">
-        <Header car={props.car} />
-        <AddedFeatures car={props.car} removeFeatures={props.removeFeatures} />
+        <Header car={car} />
+        <AddedFeatures car={car} 
+                       removeFeatures={removeFeature} />
       </div>
       <div className="box">
         <AdditionalFeatures 
-          additionalFeatures={props.additionalFeatures}
-          addFeatures={props.addFeatures} />
-        <Total car={props.car} additionalPrice={props.additionalPrice} />
+          additionalFeatures={additionalFeatures}
+          addFeatures={addFeature} />
+        <Total car={car} 
+               additionalPrice={additionalPrice} />
       </div>
     </div>
   );
 };
 
 
+// when key:value are the same, can just call the key
+const mapDispatchToProps = {
+  addFeature,
+  removeFeature
+};
 
-function mapStateToProps(state) {
+
+const mapStateToProps = (state) => {
   return {
-    additionalFeatures: state.additionalFeatures,
     additionalPrice: state.additionalPrice,
-    car: state.car
+    car: state.car,
+    additionalFeatures: state.additionalFeatures,
   };
 }
 
-// when key:value are the same, can just call the key
-const mapDispatchToProps = {
-  addFeatures, 
-  removeFeatures
-};
 
 export default connect(
   mapStateToProps,

@@ -1,21 +1,21 @@
 // we use constant variables instead of strings,
 // which prevents hidden errors resulting from typos
-export const ADD_FEATURES = "ADD_FEATURES";
-export const REMOVE_FEATURES = "REMOVE_FEATURES";
+export const ADD_FEATURE = 'ADD_FEATURE';
+export const REMOVE_FEATURE = 'REMOVE_FEATURE';
 
 // these are just pure functions that return predefined actions
-export function addFeatures(features) {
+export const addFeature = (item) => {
     return {
-      type: ADD_FEATURES,
-      payload: features
+      type: ADD_FEATURE,
+      payload: item
     };
   }
 
 // our action creators ore more flexible than hard-coded actions,
 // because we can pass parameters to tweak things when called
-export function removeFeatures(features) {
+export const removeFeature = (item) => {
   return {
-    type: REMOVE_FEATURES,
-    payload: features
+    type: REMOVE_FEATURE,
+    payload: item
   };
 }
